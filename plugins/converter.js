@@ -41,33 +41,92 @@ async function generateSticker(_0x43a996, _0x5c979b, _0x116cae = {
   }
 }
 let mtypes = ["imageMessage", "videoMessage", "stickerMessage"];
-smd({
-  cmdname: "sticker",
-  alias: ["s"],
-  info: "Makes sticker of replied image/video.",
-  type: "sticker",
-  filename: __filename,
-  use: "<reply to any image/video.>"
-}, async _0x5f0a63 => {
-  try {
-    let _0x4a2c9b = mtypes.includes(_0x5f0a63.mtype) ? _0x5f0a63 : _0x5f0a63.reply_message;
-    if (_0x4a2c9b && mtypes.includes(_0x4a2c9b?.mtype || "need_Media")) {
-      let _0x313fc1 = await _0x4a2c9b.download();
-      let _0x37d0ee = {
-        pack: Config.packname,
-        author: Config.author,
-        type: StickerTypes.FULL,
-        quality: 10
-      };
-      await generateSticker(_0x5f0a63, _0x313fc1, _0x37d0ee);
-      return _0x313fc1 = false;
-    } else {
-      return _0x5f0a63.reply("*_Uhh Dear, Reply to image/video!!_*");
+ //---------------------------------------------------------------------------
+    smd({
+        pattern: "photo",
+        desc: "Makes photo of replied sticker.",
+        category: "converter",
+        use: '<reply to any gif>',
+        filename: __filename
+    },
+    async(Void, citel, text) => {
+        const getRandom = (ext) => {
+            return `${Math.floor(Math.random() * 10000)}${ext}`
+        }
+        if (!citel.quoted) return citel.reply(`_Reply to Any Sticker._`)
+        let mime = citel.quoted.mtype
+if (mime =="imageMessage" || mime =="stickerMessage")
+{
+        let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+        let name = await getRandom('.png')
+        exec(`ffmpeg -i ${media} ${name}`, (err) => {
+            let buffer = fs.readFileSync(media)
+            Void.sendMessage(citel.chat, { image: buffer }, { quoted: citel })
+          
+         fs.unlink(media, (err) => {
+         if (err) { return console.error('File Not Deleted from From TOPHOTO AT : ' , media,'\n while Error : ' , err);  }
+         else return console.log('File deleted successfully in TOPHOTO  at : ' , media);
+         });
+         
+        })
+        
+} else return citel.reply ("```Uhh Please, Reply To A Non Animated Sticker```")
     }
-  } catch (_0xb1d121) {
-    return await _0x5f0a63.error(_0xb1d121 + "\n\ncmdName: sticker\n");
-  }
-});
+)
+//---------------------------------------------------------------------------
+
+smd({
+         pattern: "vv",
+         alias : ['viewonce','retrive'],
+         desc: "Flips given text.",
+         category: "misc",
+         use: '<query>',
+         filename: __filename
+     },
+     async(Void, citel, text) => {
+try {
+const quot = citel.msg.contextInfo.quotedMessage.viewOnceMessageV2;
+if(quot)
+{
+if(quot.message.imageMessage) 
+{ console.log("Quot Entered") 
+   let cap =quot.message.imageMessage.caption;
+   let anu = await Void.downloadAndSaveMediaMessage(quot.message.imageMessage)
+   return Void.sendMessage(citel.chat,{image:{url : anu},caption : cap })
+}
+if(quot.message.videoMessage) 
+{
+   let cap =quot.message.videoMessage.caption;
+   let anu = await Void.downloadAndSaveMediaMessage(quot.message.videoMessage)
+   return Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
+}
+ 
+}
+       
+}  
+     
+catch(e) {   }     
+
+       
+if(!citel.quoted) return citel.reply("```Uh Please Reply A ViewOnce Message```")           
+if(citel.quoted.mtype === "viewOnceMessage")
+{ console.log("ViewOnce Entered") 
+ if(citel.quoted.message.imageMessage )
+{ 
+  let cap =citel.quoted.message.imageMessage.caption;
+  let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.imageMessage)
+  Void.sendMessage(citel.chat,{image:{url : anu},caption : cap })
+}
+else if(citel.quoted.message.videoMessage )
+{
+  let cap =citel.quoted.message.videoMessage.caption;
+  let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.videoMessage)
+  Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
+}
+
+}
+else return citel.reply("```This is Not A ViewOnce Message```")
+})    //---------------------------------------------------------------------------
 smd({
   cmdname: "take",
   info: "Makes sticker of replied image/video.",
