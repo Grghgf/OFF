@@ -65,21 +65,17 @@ const {
       } = data.result;
 
       const caption = `
-*Blast-md Instagram User Information*
+*Instagram User Information*
 
-╭––––––––––––––––––►
-├──►🎯 *Username:* ${igUsername}
-├──►🎯 *Full Name:* ${fullname}
-├──►🎯 *Bio:* ${bio || "NO BIO"}
-├──►🎯
-├──►🎯 *Posts:* ${posts}
-├──►🎯 *Followers:* ${followers}
-├──►🎯 *Following:* ${following}
-├──►🎯
-├──►🎯 📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 
-╰–––––––––––––––––––►
-⦿ *Url* :  ${anu.url}
+*Username:* ${igUsername}
+*Full Name:* ${fullname}
+*Bio:* ${bio || "NO BIO"}
 
+*Posts:* ${posts}
+*Followers:* ${followers}
+*Following:* ${following}
+
+\t*BLADE-MD-V2 IG STALKER*
 `;
 
       await m.bot.sendFromUrl(m.from, photo_profile, caption, m, {}, "image");
@@ -87,11 +83,10 @@ const {
       await m.error(`${e}\n\ncommand: igstalk`, e);
     }
   }
-  
 );
 smd(
   {
-    pattern: "ytsinf",
+    pattern: "ytstalk",
     desc: "Get information about a YouTube channel.",
     category: "stalker",
     filename: __filename,
@@ -136,19 +131,14 @@ smd(
         } = channel;
 
         const caption = `
-► *Blast-md YouTube Channel Information*
+*YouTube Channel Information*
 
-► *Channel Name:* ${channel_name}
+*Channel Name:* ${channel_name}
+*Channel ID:* ${channel_id}
+*Channel Description:* ${channel_about}
+*Channel Created:* ${new Date(channel_created).toLocaleString()}
 
-► *Channel ID:* ${channel_id}
-
-► *Channel Description:* ${channel_about}
-
-► *Channel Created:* ${new Date(channel_created).toLocaleString()}
-
-► *Profile Picture:*
-
-► *BY 𝐁𝐋𝐀𝐒𝐓-𝐌𝐃*
+*Profile Picture:*
 `;
 
         const profilePictureUrl =
@@ -217,33 +207,25 @@ smd(
       } = data.result;
 
       const caption = `
-► *Blast-md GitHub User Information*
+*GitHub User Information*
 
-► *Username:* ${login}
+*Username:* ${login}
+*Name:* ${name || "N/A"}
+*ID:* ${id}
+*Bio:* ${bio || "N/A"}
+*Company:* ${company || "N/A"}
+*Blog:* ${blog || "N/A"}
+*Location:* ${location || "N/A"}
 
-► *Name:* ${name || "N/A"}
+*Public Repositories:* ${public_repos}
+*Public Gists:* ${public_gists}
+*Followers:* ${followers}
+*Following:* ${following}
 
-► *ID:* ${id}
-
-► *Bio:* ${bio || "N/A"}
-
-► *Company:* ${company || "N/A"}
-
-► *Blog:* ${blog || "N/A"}
-
-► *Location:* ${location || "N/A"}
-
-► *Public Repositories:* ${public_repos}
-► *Public Gists:* ${public_gists}
-► *Followers:* ${followers}
-► *Following:* ${following}
-
-► *Account Created:* ${new Date(created_at).toLocaleString()}
-► *Last Updated:* ${new Date(updated_at).toLocaleString()}
+*Account Created:* ${new Date(created_at).toLocaleString()}
+*Last Updated:* ${new Date(updated_at).toLocaleString()}
 
 *Avatar:*
-
-► *BY 𝐁𝐋𝐀𝐒𝐓-𝐌𝐃*
 `;
 
       await m.bot.sendFromUrl(m.from, avatar_url, caption, m, {}, "image");
@@ -305,27 +287,25 @@ smd(
       } = data.result;
 
       const caption = `
-► *Blast-md IP Address Information*
+*IP Address Information*
 
-► *IP Address:* ${ip}
-► *Reverse DNS:* ${reverse}
-► *Continent:* ${continent}
-► *Country:* ${country} (${countryCode})
-► *Region:* ${regionName}
-► *City:* ${city}
-► *ZIP Code:* ${zip}
-► *Latitude:* ${lat}
-► *Longitude:* ${lon}
-► *Timezone:* ${timezone}
-► *Currency:* ${currency}
-► *ISP:* ${isp}
-► *Organization:* ${org}
-► *AS:* ${as}
-► *Mobile:* ${mobile ? "Yes" : "No"}
-► *Proxy:* ${proxy ? "Yes" : "No"}
-► *Hosting:* ${hosting ? "Yes" : "No"}
-
-► *BY 𝐁𝐋𝐀𝐒𝐓-𝐌𝐃*
+*IP Address:* ${ip}
+*Reverse DNS:* ${reverse}
+*Continent:* ${continent}
+*Country:* ${country} (${countryCode})
+*Region:* ${regionName}
+*City:* ${city}
+*ZIP Code:* ${zip}
+*Latitude:* ${lat}
+*Longitude:* ${lon}
+*Timezone:* ${timezone}
+*Currency:* ${currency}
+*ISP:* ${isp}
+*Organization:* ${org}
+*AS:* ${as}
+*Mobile:* ${mobile ? "Yes" : "No"}
+*Proxy:* ${proxy ? "Yes" : "No"}
+*Hosting:* ${hosting ? "Yes" : "No"}
 `;
 
       await m.send(caption);
@@ -368,7 +348,7 @@ smd(
        }
  
        const { title, thumbnail, medias } = result;
-       const caption = `● *Title:* ${title}\n\n*● Source:* ${medias[0].source}`;
+       const caption = `*Title:* ${title}\n\n*Source:* ${medias[0].source}`;
  
        await m.bot.sendFromUrl(m.from, thumbnail, caption, m, {}, "image");
  
@@ -408,7 +388,7 @@ smd(
      }
  
      const { downloadUrl, fileName, fileSize, mimetype } = data.result;
-     const caption = `*● File:* ${fileName}\n*● Size:* ${fileSize}\n*Type:* ${mimetype}`;
+     const caption = `*File:* ${fileName}\n*Size:* ${fileSize}\n*Type:* ${mimetype}`;
  
      await m.bot.sendFromUrl(m.from, downloadUrl, caption, m, {}, "file");
    } catch (e) {
@@ -450,11 +430,11 @@ smd(
          url: songUrl,
        } = data.result;
  
-       let output = `● *Song:* ${song}\n`;
-       output += `● *Artist:* ${artist.join(", ")}\n`;
-       output += `● *Album:* ${album_name}\n`;
-       output += `● *Release Date:* ${release_date}\n\n`;
-       output += `● *Cover Image:* ${cover_url}\n\n`;
+       let output = `*Song:* ${song}\n`;
+       output += `*Artist:* ${artist.join(", ")}\n`;
+       output += `*Album:* ${album_name}\n`;
+       output += `*Release Date:* ${release_date}\n\n`;
+       output += `*Cover Image:* ${cover_url}\n\n`;
  
        const buffer = await axios.get(songUrl, { responseType: "arraybuffer" });
        const fileName = `${song.replace(/\s/g, "_")}.mp3`;
@@ -518,14 +498,14 @@ smd(
          return await message.reply("*No Spotify tracks found.*");
        }
  
-       let output = "*● Blast-md Spotify Search Results:*\n\n";
+       let output = "*Spotify Search Results:*\n\n";
        for (let i = 0; i < tracks.length; i++) {
          const track = tracks[i];
-         output += `● *${i + 1}. ${track.title}*\n`;
-         output += `● Artist: ${track.artist}\n`;
-         output += `● Duration: ${formatDuration(track.duration)}\n`;
-         output += `● Popularity: ${track.popularity}\n`;
-         output += `● Preview: ${
+         output += `*${i + 1}. ${track.title}*\n`;
+         output += `Artist: ${track.artist}\n`;
+         output += `Duration: ${formatDuration(track.duration)}\n`;
+         output += `Popularity: ${track.popularity}\n`;
+         output += `Preview: ${
            track.preview ? track.preview : "No preview available"
          }\n`;
          output += `URL: ${track.url}\n\n`;
@@ -578,7 +558,7 @@ smd(
  
        let caption = video.data.caption
          ? video.data.caption
-         : `*● Blast-mdTwitter Video Download*\n\n*Username:* ${video.data.username}`;
+         : `*Twitter Video Download*\n\n*Username:* ${video.data.username}`;
  
        return await message.bot.sendMessage(
          message.chat,
@@ -1033,7 +1013,7 @@ smd(
        return _0x7b09ff.reply("❌ File size bigger than 200mb.");
      }
      const _0x31321c = _0x538b40.dllink;
-     let _0x24f726 = await fancytext("*𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 APP DOWN*\n\n*● APP Name :* " + _0x538b40.name + "\n*●App Id :* " + _0x538b40.package + "\n*● Last Up :* " + _0x538b40.lastup + "\n*● App Size :* " + _0x538b40.size + "\n\n\n " + Config.caption, 25);
+     let _0x24f726 = await fancytext("『 *ᗩᑭᏦ  ᗞᝪᗯᑎしᝪᗩᗞᗴᖇ* 』\n\n*APP Name :* " + _0x538b40.name + "\n*App Id :* " + _0x538b40.package + "\n*Last Up :* " + _0x538b40.lastup + "\n*App Size :* " + _0x538b40.size + "\n\n\n " + Config.caption, 25);
      const _0x3e266b = (_0x538b40?.name || "Downloader") + ".apk";
      const _0x585f79 = "temp/" + _0x3e266b;
      let _0x533c85 = await _0x7b09ff.reply(_0x538b40.icon, {
@@ -1086,7 +1066,7 @@ smd(
      const _0x4ac8f2 = await search(_0x1cb962);
      if (_0x4ac8f2.length) {
        let _0x3d85b = await download(_0x4ac8f2[0].id);
-       let _0x307e6f = "*BLAST-MD • APK DOWNLOADER* \n*________________________________* \n\n*_Reply Any Number To Download._*\n_Results For : " + _0x1cb962 + "_ \n";
+       let _0x307e6f = "*BLADE-MD-V2 • APK DOWNLOADER* \n*________________________________* \n\n*_Reply Any Number To Download._*\n_Results For : " + _0x1cb962 + "_ \n";
        for (let _0x5a5920 = 0; _0x5a5920 < _0x4ac8f2.length; _0x5a5920++) {
          _0x307e6f += "\n*" + (_0x5a5920 + 1) + " : " + _0x4ac8f2[_0x5a5920].name + "* \n*Id : " + _0x4ac8f2[_0x5a5920].id + "* \n";
        }
@@ -1222,7 +1202,7 @@ smd(
    try {
      let _0x204f81 = _0x55aba2.reply_text ? _0x55aba2.reply_text : _0x56da6b;
      if (!_0x204f81) {
-       return _0x55aba2.reply("*_Example : .tts Hi,I'AM BLAST-MD WHATSAPP BOT CREATED BY DENZO-UCHIWA._*");
+       return _0x55aba2.reply("*_Example : .tts Hi,I am BLADE-MD-V2 whatsapp bot._*");
      }
      try {
        let _0x1974d5 = _0x56da6b ? _0x56da6b.split(" ")[0].toLowerCase() : "en";
@@ -1253,7 +1233,7 @@ smd(
          },
          mimetype: "audio/mpeg",
          ptt: true,
-         fileName: "BLAST-MD-tts.m4a"
+         fileName: "BLADE-MD-V2-tts.m4a"
        }, {
          quoted: _0x55aba2
        });
@@ -1280,7 +1260,7 @@ smd(
        [_0x1e4a34]: {
          url: _0x53783b
        },
-       caption: "*● HERE WE GO*",
+       caption: "*HERE WE GO*",
        contextInfo: {
          ...(await _0x272f8d.bot.contextInfo(Config.botname, _0x272f8d.senderName))
        }
@@ -1700,7 +1680,7 @@ smd(
      }
      let _0x3b2ca6 = await yts(_0x4ec99f);
      let _0x4123ae = _0x3b2ca6.all[0];
-     let _0x5883a9 = "\t *BLAST-MD DOWNLOADER*   \n\n*● Title :* " + _0x4123ae.title + "\n*● Url :* " + _0x4123ae.url + "\n*● Description :* " + _0x4123ae.timestamp + "\n*● Views :* " + _0x4123ae.views + "\n*● Uploaded :* " + _0x4123ae.ago + "\n*● Author :* " + _0x4123ae.author.name + "\n\n\n_Reply 1 To Video_ Or _1 document_\n_Reply 2 To Audio_ Or _2 document_";
+     let _0x5883a9 = "\t *BLADE-MD-V2 • SONG DOWNLOADER*   \n\n*Title :* " + _0x4123ae.title + "\nUrl : " + _0x4123ae.url + "\n*Description :* " + _0x4123ae.timestamp + "\n*Views :* " + _0x4123ae.views + "\n*Uploaded :* " + _0x4123ae.ago + "\n*Author :* " + _0x4123ae.author.name + "\n\n\n_Reply 1 To Video_ Or _1 document_\n_Reply 2 To Audio_ Or _2 document_";
      let _0x3885cc = await smdBuffer(_0x4123ae.thumbnail);
      var _0x44a363 = {
        ...(await _0x2c2023.bot.contextInfo(Config.botname, "ʏᴏᴜᴛᴜʙᴇ ꜱᴏɴɢ", _0x3885cc))
@@ -1727,7 +1707,7 @@ smd(
        return await _0x1c8285.reply("*_Give Me Search Query!_*");
      }
      let _0x2878ec = await yts(_0xca939c);
-     let _0x4186e4 = "*BLAST-MD • YOUTUBE DOWNLOADER* \n*_______________________________* \n\n_Reply Any Number To Download._\n  _For Audio: 1 mp3._\n  _For Video: 1 video._\n  _For document: 1 document._\n\n_Results For : " + _0xca939c + "_ \n\n";
+     let _0x4186e4 = "*BLADE-MD-V2 • YOUTUBE DOWNLOADER* \n*_______________________________* \n\n_Reply Any Number To Download._\n  _For Audio: 1 mp3._\n  _For Video: 1 video._\n  _For document: 1 document._\n\n_Results For : " + _0xca939c + "_ \n\n";
      let _0x463366 = 1;
      for (let _0x308e22 of _0x2878ec.all) {
        _0x4186e4 += " \n*" + _0x463366++ + " : " + _0x308e22.title + (_0x308e22.timestamp ? "(" + _0x308e22.timestamp + ")" : "") + "*\n*Url : " + _0x308e22.url + "*";
