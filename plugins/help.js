@@ -34,7 +34,7 @@ smd(
 ➮Oᴡɴᴇʀ - ${Config.ownername} 
 ➮Nᴜᴍ - ${owner.split(",")[0]} 
 ➮Mᴇᴍᴏ - ${formatp(os.totalmem() - os.freemem())} 
-      \n *BLADE-MD-V2 SIMPLE WHATSAPP BOT*\n\n ${readmore} 
+      \n *BLAST-MD SIMPLE WHATSAPP BOT*\n\n ${readmore} 
  ╭──㊰[ *ALL MENU* ]
  ✗│ ༝  Lɪꜱᴛ 
  ✗│ ༝  Cᴀᴛᴇɢᴏʀʏ 
@@ -193,7 +193,7 @@ astro_patch.smd(
   },
   async (message) => {
     var startTime = new Date().getTime();
-    const { key } = await message.reply("𝗣𝗶𝗻𝗴𝗶𝗻𝗴...");
+    const { key } = await message.reply("*📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝗦𝗣𝗘𝗘𝗗 PING BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀 : ${ping}ms*");
     var endTime = new Date().getTime();
     return await message.send(
       `*📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝗦𝗣𝗘𝗘𝗗 PING BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀 : ${ping}ms*`,
