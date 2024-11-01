@@ -185,7 +185,7 @@ astro_patch.cmd(
 
 // Command: Ping
 astro_patch.smd(
-  {
+ {
     pattern: "ping",
     desc: "To check ping",
     category: "misc",
@@ -193,10 +193,10 @@ astro_patch.smd(
   },
   async (message) => {
     var startTime = new Date().getTime();
-    const { key } = await message.reply("*📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝗦𝗣𝗘𝗘𝗗 PING BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀 : ${ping}ms*");
+    const { key } = await message.reply("*𝘗𝘐𝘕𝘎 𝘉𝘠 𝘉𝘓𝘈𝘚𝘛-𝘔𝘋*");
     var endTime = new Date().getTime();
     return await message.send(
-      `*📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝗦𝗣𝗘𝗘𝗗 PING BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀 : ${ping}ms*`,
+      `*📍𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝗦𝗣𝗘𝗘𝗗 PING BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀 :*\n *${endTime - startTime} ms*`,
       {
         edit: key,
       },
@@ -238,13 +238,22 @@ astro_patch.cmd(
     try {
       const { commands } = require("../lib");
       let listMessage = `\n  
- ╭━━㊰[ * ${Config.botname} * ]    
- ✗┃  ༝  Prefix: ${Config.HANDLERS}
- ✗┃  ༝  Owner: ${Config.ownername}
- ✗┃  ༝  Commands: ${commands.length}
- ✗┃  ༝  Uptime: ${runtime(process.uptime())}
- ✗┃  ༝  Mem: ${formatp(os.totalmem() - os.freemem())}
- ╰━━━━━━━━━━━━━━❒\n`;
+ ╭───────────●
+╎👻𝗴𝗼𝗼𝗱 𝗺𝗼𝗿𝗻𝗶𝗻𝗴👋
+╰───────────●
+╔══════════════❍
+║➪𝐁𝐎𝐓 𝐍𝐀𝐌𝐄: 𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 
+║➪𝐃é𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐍𝐔𝐌:+244935469526 
+║➪𝐁𝐎𝐓 𝐒𝐏𝐄𝐄𝐃: 000.23 
+║➪𝐌𝐎𝐃𝐄: ${MODE}
+║➪𝐏𝐄𝐅𝐈𝐗𝐄: 〘 ${prefix} 〙
+║➪𝐓𝐇𝐄𝐌𝐄:  ${tlang().title}
+║➪𝐌𝐄𝐌𝐎𝐑𝐘: 64GB
+║➪𝐁𝐘: 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀
+╚══════════════❍
+    ╭─────────●
+    ╎📃𝙘𝙤𝙢𝙢𝙖𝙣𝙙 𝙡𝙞𝙨𝙩
+    ╰─────────●\n`;
 
       for (let i = 0; i < commands.length; i++) {
         if (commands[i].pattern === undefined) {
