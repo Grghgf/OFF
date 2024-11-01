@@ -734,38 +734,30 @@ smd(
   },
   async (_0x45da98) => {
     try {
-      let { data: _0x44f98c } = await axios.get("https://api.github.com/repos/DENZO-UCHIWA/BLAST-MD");
-      let  cap = `Hey ${citel.pushName}\n
-╭––––––––––––––––––––––––►
-├──► *🎯Total Stars:* ${data.stargazers_count} stars
-┆
-├──► *🎯Forks:* ${data.forks_count} forks
-┆
-├──► *🎯github link:* https://github.com/DENZO-UCHIWA/BLAST-MD
-┆
-├──► *🎯support Group:* https://chat.whatsapp.com/IR8cZNst6cU85ih73fVrud
-┆
-├──► *🎯develeper num:* +244939457425
-┆
-├──► *🎯Tutoral video:*
-┆
-├──► 🎯𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 𝐁𝐘  
-╰––––––––––––––––––––––––►`
-        let buttonMessaged = {
-            image: { url: await botpic() },
-            caption: cap,
-            footer: tlang().footer,
-            headerType: 4,
-            contextInfo: {
-                externalAdReply: {
-                    title: "BLAST-MD",
-                    body: "COOL and Easy",
-                    thumbnail: log0,
-                    mediaType: 4,
-                    mediaUrl: '',
-                    sourceUrl: ``,
-                },
-       },
+      let { data: _0x44f98c } = await axios.get(
+        "https://api.github.com/repos/DENZO-UCHIWA/BLAST-MD"
+      );
+      let _0x1c73f9 = (
+        "\n*BLAST-MD A simple Mutil Device WhatsApp Bot Created by DENZO-UCHIWA*" +
+        Config.ownername +
+        "*. 👑\n\n  *➤ Total Stars:* " +
+        (_0x44f98c?.stargazers_count || "None (🥲)") +
+        " stars\n  *➤ Forks:* " +
+        (_0x44f98c?.forks_count || "1000+") +
+        " forks\n  *➤ Creator:* DENZO-UCHIWA\n  *➤ Number:* +244956100349\n *➤ Support:*\n *➤ Created:*   " +
+        (_0x44f98c?.created_at || "2024/10") +
+        "\n  *➤ Link github:* _https://github.com/DENZO-UCHIWA/BLAST.MD_\n  *➤ Scan:* _" +
+        scan +
+        "_\n" +
+        (Config.caption ? "\n\n" + Config.caption : "")
+      ).trim();
+      return await _0x45da98.sendUi(_0x45da98.jid, {
+        caption: _0x1c73f9,
+      });
+    } catch (_0x5816fe) {
+      await _0x45da98.error(_0x5816fe + "\n\ncommand: repo", _0x5816fe);
+    }
+  }
 );
 smd(
   {
@@ -780,43 +772,29 @@ smd(
       const _0x2d09cb = process.uptime();
       timestampe = speed();
       latensie = speed() - timestampe;
-      let  ter = `
-╭–––––––––––––––––––––––––►
-┆► *🎯Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
-├►
-┆► *🎯Speed:* ${latensie.toFixed(4)} ms
-├►
-┆► *🎯Uptime:* ${runtime(process.uptime())}
-├►
-┆► *🎯Version:* 0.0.9
-├►
-┆► *🎯Owner:*  ${Config.ownername}
-├►
-┆► *🎯𝐁𝐋𝐀𝐒𝐓-𝐌𝐃*: https://chat.whatsapp.com/IR8cZNst6cU85ih73fVrud 
-├►
-┆► *🎯Developed by*: 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀
-├►
-┆► 🎯𝐁𝐋𝐀𝐒𝐓-𝐌𝐃 
-╰––––––––––––––––––––––––––►
-© *Powered by* ${tlang().title}*
-`;
-        let buttonMessaged = {
-            image: {
-                url: await botpic(),
-            },
-            caption: ter,
-            footer: tlang().footer,
-            headerType: 4,
-            contextInfo: {
-                externalAdReply: {
-                    title: tlang().title,
-                    body: `𝐁𝐋𝐀𝐒𝐓-𝐌𝐃-Status`,
-                    thumbnail: log0,
-                    mediaType: 2,
-                    mediaUrl: ``,
-                    sourceUrl: ``,
+      let  _0x53eb40 = (
+        " *Hey ! I am " +
+        Config.botname +
+        "*\n  ➤🎯 About:* *A Simple WhatsApp Bot Created By Denzo-uchiwa *" +
+        Config.ownername +
+        "*.\n\n  *➤🎯 Speed:* " +
+        latensie.toFixed(4) +
+        " ms\n  *➤🎯 Uptime:* " +
+        runtime(process.uptime()) +
+        "\n  *➤🎯 Version:* " +
+        Config.VERSION +
+        "\n  *➤🎯 Owner:*  " +
+        Config.ownername +
+        "\n\n  *➤🎯 Channel:* _" +
+        gurl +
+        "_ \n" +
+        (Config.caption ? "\n\n" + Config.caption : "")
+      ).trim();
+      return await _0x397531.bot.sendUi(_0x397531.jid, {
+        caption: _0x53eb40,
+      });
     } catch {}
-  }
+  } 
 );
 smd(
   {
@@ -1241,7 +1219,7 @@ smd(
     pattern: "aitts",
     desc: "Text to Voice Using Eleven Lab Ai",
     category: "ai",
-    use: "<Hii, David>",
+    use: "<Hii, DENZO>",
     filename: __filename,
   },
   async (_0x1a01af, _0x1ac85a) => {
