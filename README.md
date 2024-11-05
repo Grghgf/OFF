@@ -42,8 +42,7 @@
  <img src="https://img.shields.io/badge/Create%20Account%20Now-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 **2. deploy on heroku**
-  - <a align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/DENZI-UCHIWA/BLAST-MD"> <img src="https://img.shields.io/badge/DEPLOY%20NOW-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>  
+  - <a align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/DENZO-UCHIWA/BLAST-MD"> <img src="https://img.shields.io/badge/DEPLOY%20NOW-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 
 
@@ -61,7 +60,7 @@
 
 
 ### DEPLOY ON REPLIT
-- <p align="center" >
+- <a align="center" >
     <a href="https://repl.it/github/DENZO-UCHIWA/BLAST-MD">
     <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="220" height="38.45"/></a></p>
 
