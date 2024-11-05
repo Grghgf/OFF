@@ -1086,7 +1086,7 @@ smd(
         _0x3079e2.msgStatus = true;
         _0x3079e2.senderMsg = _0x358984;
         _0x5f656f =
-          "*ᴀꜱᴛᴀ-ᴍᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
+          "*blast • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
           _0x3079e2.id +
           "\n*Date:* _" +
           _0xbcd286 +
@@ -1129,8 +1129,8 @@ smd(
           return;
         }
         if (
-          _0x2acf30.reply_text.includes("ᴀꜱᴛᴀ-ᴍᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
-          _0x2dfb59[0].includes("ᴀꜱᴛᴀ-ᴍᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
+          _0x2acf30.reply_text.includes("Blast-md") &&
+          _0x2dfb59[0].includes(" •ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
           _0x2dfb59[2].includes("Msg_Id")
         ) {
           let _0x1b0d01 = "" + _0x2dfb59[2].replace("*Msg_Id:* ", "").trim();
