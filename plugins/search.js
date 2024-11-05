@@ -155,7 +155,7 @@ async(message, match) => {
  try{
 
    message.react("🔍")
-         if (!match) return message.reply(`Give me a user name like ${prefix}github bladeh3x`)
+         if (!match) return message.reply(`Give me a user name linke ${prefix}github DENZO-UCHIWA`)
 
          const { data } = await axios(`https://api.github.com/users/${match}`)
    if(!data) return await message.send(`*_Didn't get any results, Provide valid user name!_*`)
@@ -265,15 +265,14 @@ smd({
             textw += `*Latitude:-* ${data.coord.lat}\n`;
             textw += `*Longitude:-* ${data.coord.lon}\n`;
             textw += `*Country:-* ${data.sys.country}\n\n`;
-            textw += `🌡️ *Temperature*: ${data.main.temp}°C`;
-            textw += `🌡️ *Feels Like*: ${data.main.feels_like}°C`;
-            textw += `🌡️ *Min Temp*: ${data.main.temp_min}°C`;
-            textw += `🌡️ *Max Temp*: ${data.main.temp_max}°C`;
-            textw += `💧 *Humidity*: ${data.main.humidity}%`;
-            textw += `☁️ *Weather*: ${data.weather[0].main}`;
-            textw += `💨 *Wind Speed*: ${data.wind.speed} m/s`;
-            textw += `🔽 *Pressure*: ${data.main.pressure} hPa`;
-            textw += `> *BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀*`;
+            textw += `🌡️ *Temperature*: ${data.main.temp}°C\n`;
+            textw += `🌡️ *Feels Like*: ${data.main.feels_like}°C\n`;
+            textw += `🌡️ *Min Temp*: ${data.main.temp_min}°C\n`;
+            textw += `🌡️ *Max Temp*: ${data.main.temp_max}°C\n`;
+            textw += `💧 *Humidity*: ${data.main.humidity}%\n`;
+            textw += `☁️ *Weather*: ${data.weather[0].main}\n`;
+            textw += `💨 *Wind Speed*: ${data.wind.speed} m/s\n`;
+            textw += `🔽 *Pressure*: ${data.main.pressure} hPa\n`;
             textw +=Config.caption ;
              message.bot.sendUi(message.jid, { caption: textw, },{quoted : message} ,"text",'true' );
 
