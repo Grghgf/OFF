@@ -265,8 +265,17 @@ smd({
             textw += `*Latitude:-* ${data.coord.lat}\n`;
             textw += `*Longitude:-* ${data.coord.lon}\n`;
             textw += `*Country:-* ${data.sys.country}\n\n`;
+            textw += `🌡️ *Temperature*: ${data.main.temp}°C`;
+            textw += `🌡️ *Feels Like*: ${data.main.feels_like}°C`;
+            textw += `🌡️ *Min Temp*: ${data.main.temp_min}°C`;
+            textw += `🌡️ *Max Temp*: ${data.main.temp_max}°C`;
+            textw += `💧 *Humidity*: ${data.main.humidity}%`;
+            textw += `☁️ *Weather*: ${data.weather[0].main}`;
+            textw += `💨 *Wind Speed*: ${data.wind.speed} m/s`;
+            textw += `🔽 *Pressure*: ${data.main.pressure} hPa`;
+            textw += `> *BY 𝐃𝐄𝐍𝐙𝐎 𝐔𝐂𝐇𝐈𝐖𝐀*`;
             textw +=Config.caption ;
-            message.bot.sendUi(message.jid, { caption: textw, },{quoted : message} ,"text",'true' );
+             message.bot.sendUi(message.jid, { caption: textw, },{quoted : message} ,"text",'true' );
 
         }catch(e){return await message.error(`${e}\n\n command: weather`,e,`*_Please provide valid city name!_*`) }
         }
@@ -290,7 +299,6 @@ smd({
  )
 
     //---------------------------------------------------------------------------
-/*
 smd({
             pattern: "horo",
             category: "search",
@@ -323,7 +331,7 @@ smd({
             }catch(e){return await message.error(`${e}\n\n command: horo`,e,`*_Uhh dear, Didn't get any results!_*`) }
         }
     )
-    */
+   
     //---------------------------------------------------------------------------
 
 smd({
