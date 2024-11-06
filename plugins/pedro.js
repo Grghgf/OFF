@@ -10,7 +10,7 @@ smd({
     on: "text" ,
     filename: __filename,
 },async(citel,match , {smd}) => {
-  let isteddy = smd ==="teddy"?true : citel.isPublic && match.toLowerCase().includes("teddy") ? true : ""       
+  let isteddy = smd ==="pedro"?true : citel.isPublic && match.toLowerCase().includes("pedro") ? true : ""       
       if (isteddy && !teddyM[citel.id]) {
       teddyM[citel.id] =true;
       let teddy = ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌', '🙂', '🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈']
