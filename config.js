@@ -64,7 +64,7 @@ module.exports = {
   aitts_Voice_Id: process.env.AITTS_ID || "229",
   ELEVENLAB_API_KEY: process.env.ELEVENLAB_API_KEY || "",
   WORKTYPE: process.env.WORKTYPE || process.env.MODE || "private",
-  LANG: (process.env.THEME || "BLADE").toUpperCase(),
+  LANG: (process.env.THEME || "BLAST-MD").toUpperCase(),
 };
 global.rank = "updated";
 global.isMongodb = false;
