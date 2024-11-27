@@ -5,7 +5,7 @@
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Rubik+Dirt&size=65&pause=1000&color=F72C3F&background=FF20A500&center=true&vCenter=true&width=1000&height=150&lines=HEY!!!!;I`+AM+BLAST-MD;CREATED+BY+DENZO-UCHIWA;THANKS+FOR+CHOOSE+MY+BOT" alt="Typing SVG" /></a>   
 </p> 
   
- <img src="https://d.uguu.se/ArwETvsj.jpg"> 
+ <img src="https://i.ibb.co/ZdD3v42/5ef70435f18d5fb1.jpg"> 
  
 <p align="center">
  <a href="https://chat.whatsapp.com/JFNXyoRTf4t6e9GTaM2Oe6" target="_blank">
