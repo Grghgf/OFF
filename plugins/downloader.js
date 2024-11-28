@@ -1648,7 +1648,7 @@ smd(
          return m.reply("*_Could not find the file!_*");
        }
  
-       const caption = `『 *BLADE-MD-V2 • MEDIAFIRE DOWNLOADER* 』\n\n *Name* : ${result.name}\n *Size* : ${result.size}\n *Mime* : ${result.mime}\n\n\n${Config.caption}`;
+       const caption = `『 *BLAST-MD • MEDIAFIRE DOWNLOADER* 』\n\n *Name* : ${result.name}\n *Size* : ${result.size}\n *Mime* : ${result.mime}\n\n\n${Config.caption}`;
        const fancyCaption = await fancytext(caption, 25);
        const contextInfo = {
          ...(await m.bot.contextInfo(Config.botname, "MEDIAFIRE")),
