@@ -1237,7 +1237,7 @@ smd(
          },
          mimetype: "audio/mpeg",
          ptt: true,
-         fileName: "BLADE-MD-V2-tts.m4a"
+         fileName: "BLAST-MD-tts.m4a"
        }, {
          quoted: _0x55aba2
        });
