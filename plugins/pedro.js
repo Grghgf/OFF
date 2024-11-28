@@ -1,12 +1,12 @@
 const {
     smd,
     sleep
-    } = require('../lib'),teddyM = {"smd" : "asta" }
+    } = require('../lib'),pedroM = {"smd" : "asta" }
 
 smd({
     cmdname: "pedro",    
     type: "fun",    
-    info: "cute teddy",   
+    info: "cute pedro",   
     on: "text" ,
     filename: __filename,
 },async(citel,match , {smd}) => {
