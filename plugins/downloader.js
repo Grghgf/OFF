@@ -1693,12 +1693,59 @@ smd(
        image: _0x3885cc,
        caption: _0x5883a9,
        contextInfo: _0x44a363
-     });
-   } catch (_0x86b411) {
-     return _0x2c2023.error(_0x86b411 + "\n\ncommand: mediafire", _0x86b411, "*_File not found!!_*");
-   }
+     },
+         footer: tlang().footer,
+                headerType: 4,
+            };
+            return Void.sendMessage(citel.chat, buttonMessage, {
+                quoted: citel,
+	    }
+         let urlYt = text;
+            if(!text){ text=citel.quoted.text; }
+
+            if (!urlYt.startsWith("http")) 
+            {
+                let yts = require("secktor-pack");
+                let search = await yts(text);
+                let anu = search.videos[0];
+                urlYt = anu.url; 
+            }
+            let infoYt = await ytdl.getInfo(urlYt);
+            if (infoYt.videoDetails.lengthSeconds >= 1200) return citel.reply(`*song not Found, Try Differ Name*`);
+            let titleYt = infoYt.videoDetails.title;   
+	    citel.reply(`_Downloading ${infoYt.videoDetails.title}?_`);
+            let randomName = getRandom(".mp3");
+            const stream = ytdl(urlYt, {
+                 filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128, })
+                 .pipe(fs.createWriteStream(`./${randomName}`));
+                
+	   await new Promise((resolve, reject) => { stream.on("error", reject);  stream.on("finish", resolve);  });
+            
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            if (fileSizeInMegabytes <= dlsize) 
+            {
+                let yts = require("secktor-pack");
+                let search = await yts(text);
+                let buttonMessage = 
+				{
+				    audio: fs.readFileSync(`./${randomName}`),
+				    mimetype: 'audio/mpeg',
+				    fileName: titleYt + ".mp3",
+				    headerType: 4,
+				 }
+                 
+                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                return fs.unlinkSync(`./${randomName}`);
+            } 
+            else {   citel.reply(`❌ File size bigger than 100mb.`);    }
+             return fs.unlinkSync(`./${randomName}`);
+   
+   }catch (e) { return citel.reply(`Error While Downloading Your Song`);  }
  });
- cmd({
+ 
+cmd({
    pattern: "yts",
    alias: ["yt", "ytsearch"],
    desc: "Search Song From youtube",
@@ -1978,7 +2025,7 @@ smd(
          url: _0x59bbaa
        },
        mimetype: "audio/mpeg",
-       fileName: "BLADE-MD-V2--" + _0x1d542b[1] + ".mp3",
+       fileName: "BLAST-MD-V2--" + _0x1d542b[1] + ".mp3",
        caption: Config.caption,
        contextInfo: _0x10e2fa
      };
