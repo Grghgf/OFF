@@ -124,7 +124,7 @@ smd({
   );
  
    smd({
-           pattern: "blade",
+           pattern: "pedros",
            category: "search",
            desc: "Finds info about song",
            filename: __filename,
@@ -607,7 +607,7 @@ if(n && n[0]){
       "Accept-Encoding": "application/json",
   };
 
-    const res = await axios.get("https://www.googleapis.com/customsearch/v1?q=", { headers: headers, params: params });
+    const res = await axios.get("https://www.google.com/search?q=", { headers: headers, params: params });
     let body = res.data;
     body = body.slice(body.lastIndexOf("AF_initDataCallback"));
     body = body.slice(body.indexOf("["));
