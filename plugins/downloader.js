@@ -1687,62 +1687,16 @@ smd(
      let _0x5883a9 = "\t *BLAST-MD • SONG DOWNLOADER*   \n\n*Title :* " + _0x4123ae.title + "\nUrl : " + _0x4123ae.url + "\n*Description :* " + _0x4123ae.timestamp + "\n*Views :* " + _0x4123ae.views + "\n*Uploaded :* " + _0x4123ae.ago + "\n*Author :* " + _0x4123ae.author.name + "\n\n\n_Reply 1 To Video_ Or _1 document_\n_Reply 2 To Audio_ Or _2 document_";
      let _0x3885cc = await smdBuffer(_0x4123ae.thumbnail);
      var _0x44a363 = {
-       ...(await _0x2c2023.bot.contextInfo(Config.botname, "ʏᴏᴜᴛᴜʙᴇ ꜱᴏɴɢ", _0x3885cc))
+      ...(await _0x2c2023.bot.contextInfo(Config.botname, "ʏᴏᴜᴛᴜʙᴇ ꜱᴏɴɢ", _0x3885cc))
      };
      await _0x2c2023.bot.sendMessage(_0x2c2023.jid, {
        image: _0x3885cc,
        caption: _0x5883a9,
        contextInfo: _0x44a363
-     },
-         footer: tlang().footer,
-                headerType: 4,
-            };
-            return Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-	    }
-         let urlYt = text;
-            if(!text){ text=citel.quoted.text; }
-
-            if (!urlYt.startsWith("http")) 
-            {
-                let yts = require("secktor-pack");
-                let search = await yts(text);
-                let anu = search.videos[0];
-                urlYt = anu.url; 
-            }
-            let infoYt = await ytdl.getInfo(urlYt);
-            if (infoYt.videoDetails.lengthSeconds >= 1200) return citel.reply(`*song not Found, Try Differ Name*`);
-            let titleYt = infoYt.videoDetails.title;   
-	    citel.reply(`_Downloading ${infoYt.videoDetails.title}?_`);
-            let randomName = getRandom(".mp3");
-            const stream = ytdl(urlYt, {
-                 filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128, })
-                 .pipe(fs.createWriteStream(`./${randomName}`));
-                
-	   await new Promise((resolve, reject) => { stream.on("error", reject);  stream.on("finish", resolve);  });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            if (fileSizeInMegabytes <= dlsize) 
-            {
-                let yts = require("secktor-pack");
-                let search = await yts(text);
-                let buttonMessage = 
-				{
-				    audio: fs.readFileSync(`./${randomName}`),
-				    mimetype: 'audio/mpeg',
-				    fileName: titleYt + ".mp3",
-				    headerType: 4,
-				 }
-                 
-                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-                return fs.unlinkSync(`./${randomName}`);
-            } 
-            else {   citel.reply(`❌ File size bigger than 100mb.`);    }
-             return fs.unlinkSync(`./${randomName}`);
-   
-   }catch (e) { return citel.reply(`Error While Downloading Your Song`);  }
+     });
+   } catch (_0x86b411) {
+     return _0x2c2023.error(_0x86b411 + "\n\ncommand: mediafire", _0x86b411, "*_File not found!!_*");
+   }
  });
  
 cmd({
